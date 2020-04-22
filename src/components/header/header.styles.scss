@@ -17,10 +17,17 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        position: relative;
 
         .option {
         padding: 10px 15px;
         cursor: pointer;
         }
     }
+    .sub-header {
+        position: absolute;
+        right: 0;
+        top: 65px;
+    }
 }
+
