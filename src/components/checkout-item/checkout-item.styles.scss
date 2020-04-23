@@ -1,0 +1,23 @@
+.checkout-row {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    border-bottom: 1px solid darkgrey;
+    align-items: center;
+    .row-block {
+        width: 23%;
+        &:not(:first-child) {
+            text-align: center;
+        }
+        & > img {
+            width: 90%;
+            height: 100%;
+        }
+        &:last-child {
+          width: 8%;
+        }
+    }
+    .remove-button {
+        cursor: pointer;
+    }
+}

@@ -9,10 +9,12 @@ import { setCurrentUser } from './redux/user/user.action';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component.jsx';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import Checkout from './pages/checkout/checkout.component';
 import Header from './components/header/header.component.jsx';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 
 import './App.css';
+
 class App extends React.Component {
 
 
@@ -59,6 +61,7 @@ class App extends React.Component {
               ? (<Redirect to='/'/>)
               : (<SignInAndSignUpPage/>)
             } />
+            <Route path = '/checkout' component={Checkout}/>
         </Switch>
       </div>
     );

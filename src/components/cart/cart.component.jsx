@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import { selectCartItems, selectCartHidden } from '../../redux/cart/cart.selector'
@@ -7,16 +8,9 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import './cart.styles.scss';
 
-const Cart = ({ items }) => {
-
-    if (items.length === 0) {
-        return (
-            <div className='cart-holder'>
-                Your shopping bag is empty
-            </div>
-        )
-    }
-    return (
+const Cart = ({ items }) =>
+    items.length
+    ? (
         <div className='cart-holder'>
             <div className='cart-items-holder'>
                 {
@@ -34,10 +28,15 @@ const Cart = ({ items }) => {
                 }
             </div>
 
-            <CustomButton>Go to checkout</CustomButton>
+            <Link to='/checkout'><CustomButton>Go to checkout</CustomButton></Link>
         </div>
     )
-};
+    : (
+        <div className='cart-holder'>
+            Your shopping bag is empty
+        </div>
+    )
+;
 
 const mapStateToProps = createStructuredSelector({
     isHidden: selectCartHidden,

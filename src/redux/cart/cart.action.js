@@ -7,3 +7,7 @@ export const addItemToCart = id => ({
 export const toggleCart = {
     type: cartActionTypes.TOOGLE_CART
 }
+export const removeItem = id => ({
+    type: cartActionTypes.REMOVE_ITEM,
+    payload: id
+})

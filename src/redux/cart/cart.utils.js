@@ -2,7 +2,6 @@ export const addItemToCart = (itemsState, itemToAdd) => {
 
     const isIdExistInCart = itemsState.find(item => item.id === itemToAdd.id)
 
-    console.log(isIdExistInCart)
     if(isIdExistInCart) {
         const newArray = itemsState.map( item => {
 
@@ -16,5 +15,10 @@ export const addItemToCart = (itemsState, itemToAdd) => {
     } else {
         return [...itemsState, {...itemToAdd, quantity: 1}]
     }
+
+}
+export const removeItemFromCard = (itemsState, id) => {
+
+    return itemsState.filter( item => item.id !== id)
 
 }
