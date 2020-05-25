@@ -2,13 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {createStructuredSelector} from 'reselect';
-import { selectCartItems, selectCartHidden } from '../../redux/cart/cart.selector'
+import { selectCartItems, selectCartHidden } from '../../redux/cart/cart.selector';
+import {toggleCart} from '../../redux/cart/cart.action'
 import CustomButton from '../custom-button/custom-button.component';
 
 
 import './cart.styles.scss';
 
-const Cart = ({ items }) =>
+const Cart = ({ items, dispatch }) =>
     items.length
     ? (
         <div className='cart-holder'>
@@ -28,7 +29,9 @@ const Cart = ({ items }) =>
                 }
             </div>
 
-            <Link to='/checkout'><CustomButton>Go to checkout</CustomButton></Link>
+            <Link to='/checkout'>
+                <CustomButton onClick = {() => dispatch(toggleCart)}>Go to checkout</CustomButton>
+            </Link>
         </div>
     )
     : (

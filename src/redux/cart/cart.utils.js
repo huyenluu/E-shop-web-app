@@ -22,3 +22,13 @@ export const removeItemFromCard = (itemsState, id) => {
     return itemsState.filter( item => item.id !== id)
 
 }
+export const decreaseItemQuantity = (itemsState, id) => {
+
+    const item = itemsState.find(item => item.id === id)
+
+    if(item.quantity === 1) {return removeItemFromCard(itemsState, id) }
+    else if(item.quantity < 1) return
+    else {
+        return itemsState.map( item => item.id === id ? {...item, quantity: item.quantity - 1} : item)
+    }
+}
