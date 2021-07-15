@@ -1,4 +1,5 @@
-$google-blue: #4c8BF5;
+$facebook-blue: #4362ad;
+$google-red: #db532c;
 
 .custom-button {
   min-width: 165px;
@@ -15,6 +16,7 @@ $google-blue: #4c8BF5;
   font-weight: bolder;
   border: none;
   cursor: pointer;
+  border-radius: 3px;
 
   &:hover {
     background-color: white;
@@ -23,11 +25,20 @@ $google-blue: #4c8BF5;
   }
 
   &.google-sign-in {
-    background-color: $google-blue;
+    background-color: $google-red;
     color: white;
 
     &:hover {
-      background-color: darken($color: $google-blue, $amount: 15);
+      background-color: darken($color: $google-red, $amount: 15);
+      border: none;
+    }
+  }
+  &.facebook-sign-in {
+    background-color: $facebook-blue;
+    color: white;
+
+    &:hover {
+      background-color: darken($color: $facebook-blue, $amount: 15);
       border: none;
     }
   }
